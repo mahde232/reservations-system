@@ -96,7 +96,7 @@ export default function BusinessPage() {
     }
 
     const copyLinkToClipboard = () => {
-        navigator.clipboard.writeText(`https://reservations-system.netlify.app/BusinessPage/?user=${business.owner}&business=${business.id}`)
+        navigator.clipboard.writeText(`http://reservations-system.netlify.app/BusinessPage/?user=${business.owner}&business=${business.id}`)
         alert('קישור לחנות הועתק, תעביר ללקוחות')
     }
 
