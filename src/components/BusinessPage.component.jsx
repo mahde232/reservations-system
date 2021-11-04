@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom';
+import {useHistory,useLocation} from 'react-router-dom';
 import Reservation from './Reservation.component';
 import axios from 'axios'
 import './BusinessPage.style.css'
@@ -8,6 +8,7 @@ const usersAPIURL = 'https://617fa530055276001774fb89.mockapi.io/users/';
 
 export default function BusinessPage() {
     const history = useHistory();
+    const location = useLocation();
     const [loggedInUser] = useState(JSON.parse(localStorage.getItem("userLoggedIn")));
     const [business, setBusiness] = useState(null);
     const [reservation, setReservation] = useState({
@@ -18,9 +19,12 @@ export default function BusinessPage() {
 
     useEffect(() => {
         const getBusinessData = async () => {
-            const paramsArray = window.location.search.substring(1).split('&');
+            console.log('location ',location);
+            const paramsArray = location.search.substring(1).split('&');
             const URLuserID = paramsArray[0].split('=')[1];
             const URLbusinessID = paramsArray[1].split('=')[1];
+            console.log('URLuserID ',URLuserID);
+            console.log('URLbusinessID ',URLbusinessID);
             const response = await axios.get(`https://617fa530055276001774fb89.mockapi.io/users/${URLuserID}/businesses/${URLbusinessID}`)
             if(response.status === 200) {
                 setBusiness(response.data)
@@ -30,7 +34,7 @@ export default function BusinessPage() {
             }
         }
         getBusinessData();
-    }, [])
+    }, []) //eslint-disable-line
 
     const handleOnChange = (e) => { //inputs handler
         e.target.style.border = "";
@@ -49,9 +53,7 @@ export default function BusinessPage() {
         })
         if(isGoodToGo) {
             const tempReservations = [...business.reservations,reservation];
-            console.log('before sort',tempReservations);
             tempReservations.sort((a,b)=> a.time.localeCompare(b.time));
-            console.log('after sort',tempReservations);
             business.reservations = tempReservations;
             const response = await axios.put(`${usersAPIURL}${business.owner}/businesses/${business.id}`, business)
             if(response.status === 200){
@@ -83,7 +85,6 @@ export default function BusinessPage() {
                 return true;
             return false; 
         })
-        console.log('filteredByCurrentTime',filteredByCurrentTime);
         let takenTimes = business.reservations.map(item=>{ //get all taken reservations
             return item.time;
         })
@@ -96,7 +97,7 @@ export default function BusinessPage() {
     }
 
     const copyLinkToClipboard = () => {
-        navigator.clipboard.writeText(`http://reservations-system.netlify.app/BusinessPage/?user=${business.owner}&business=${business.id}`)
+        navigator.clipboard.writeText(`http://reservations-system.netlify.app/BusinessPage?user=${business.owner}&business=${business.id}`)
         alert('קישור לחנות הועתק, תעביר ללקוחות')
     }
 

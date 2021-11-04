@@ -30,7 +30,7 @@ export default function MyBusinesses() {
             <div id='listOfBusinesses'>
             { listOfBusinesses.length !== 0 ? 
                 <>{listOfBusinesses.map(item => {
-                    return (<><Link key={item.id} to={{pathname: `/BusinessPage/?user=${item.owner}&business=${item.id}`}} className='linktag'><div key={item.id} className='businessDiv'>
+                    return (<><Link key={item.id} to={{pathname: `/BusinessPage`,search: `?user=${item.owner}&business=${item.id}`}} className='linktag'><div key={item.id} className='businessDiv'>
                         <h3>{item.businessName}</h3>
                         <h6>שעות פתיחה</h6>
                         <h4>{item.morningHours} / {item.eveningHours}</h4>
