@@ -1,0 +1,35 @@
+#adminPanelContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+}
+#adminPanelContainer > div {
+    margin: 10px;
+}
+#adminPanelContainer > div > div {
+    margin: 5px;
+}
+.adminOption {
+    color: black;
+    background-color: lightgrey;
+    width: fit-content;
+    margin: 0 1vw;
+    padding: 0px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:4vh;
+    min-height: 2rem;
+    font-weight: 600;
+    border-radius: .3rem;
+box-shadow:black 0 0 1px 1px;
+}
+#addOptions, #deleteOptions, #updateOptions {
+    display: flex;
+    flex-direction: row;
+}

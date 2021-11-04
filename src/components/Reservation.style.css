@@ -1,0 +1,8 @@
+.reservation {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    margin: 5px 0px;
+}

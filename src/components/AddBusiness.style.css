@@ -1,0 +1,18 @@
+#addBusinessContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addBusinessForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.link {
+    color: var(--main-links-color);
+}
+#addBusinessForm .link:hover {
+    text-decoration: underline;
+}

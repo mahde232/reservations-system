@@ -1,0 +1,8 @@
+#deleteBusinessTypeDiv{
+    display: flex;
+    flex-direction: column;
+
+}
+#deleteBusinessTypeDiv input{
+width: 100%;
+}

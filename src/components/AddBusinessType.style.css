@@ -1,0 +1,15 @@
+#addBusinessTypeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addBusinessTypeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addBusinessTypeForm div {
+    margin: 10px;
+}

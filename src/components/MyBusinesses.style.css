@@ -1,0 +1,35 @@
+#myBusinessContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 2rem;
+}
+#listOfBusinesses {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.businessDiv {
+    max-width: 1200px;
+    width: 40vw;
+    min-width: 300px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: black;
+    background: linear-gradient(to bottom,#dddddd,#dddddd30,#dddddd);
+    box-shadow: 0 0 0.3rem 0.01rem black;
+}
+.businessDiv h3 {
+    border-bottom: 1.4px solid #00000088;
+    width: 60%;
+}
+.linktag {
+    text-decoration: none;
+}
+hr {
+    width: 90%;
+}

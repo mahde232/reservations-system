@@ -1,0 +1,15 @@
+#addUserContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addUserForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addUserForm div {
+    margin: 10px;
+}
