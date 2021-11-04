@@ -95,18 +95,23 @@ export default function BusinessPage() {
         return filterByTaken; //final filtered possible reservations
     }
 
+    const copyLinkToClipboard = () => {
+        navigator.clipboard.writeText(`http://localhost:3000/BusinessPage/?user=${business.owner}&business=${business.id}`)
+        alert('קישור לחנות הועתק, תעביר ללקוחות')
+    }
+
     if(loggedInUser && business && loggedInUser.id === business.owner) {
         return (
             <div id='ownerViewContainer'>
                 {business ? 
                 (<div className='ownerbusinessContainer floater'>
                     <div className='businessLogo'><img src={business.businessBannerURL} alt='logo'/></div>
-                    <h2>{business.businessName}</h2>
+                    <h2>{business.businessName} <i className="fas fa-link businesslink" onClick={copyLinkToClipboard}></i></h2>
                     <h4>רשימת התורים להיום</h4>
                     <div className='reservationsList'>
-                        {business.reservations.map(item => {return <Reservation key={item.id} reservationData={item}/>})}
+                        {business.reservations.length > 0 ? business.reservations.map(item => {return <Reservation key={Math.random()*100000} reservationData={item}/>}): <div>רשימת התורים ריקה</div>}
                     </div>
-                </div>): <div class="loader">Loading...</div>}
+                </div>): <div className="loader">Loading...</div>}
             </div>
         )
     }
@@ -132,7 +137,7 @@ export default function BusinessPage() {
                             <input type='submit' value='שריין תור'/>
                         </div>
                     </form>
-                </div>) : <div class="loader">Loading...</div>
+                </div>) : <div className="loader">Loading...</div>
                 }
             </div>
         )

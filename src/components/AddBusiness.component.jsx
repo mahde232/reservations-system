@@ -17,7 +17,8 @@ export default function AddBusiness() {
         morningHours: '',
         eveningHours: '',
         timeBetweenReservations: '',
-        businessType: ''
+        businessType: '',
+        businessBannerURL: ''
     });
     useEffect(() => {
         const getOwnersFromDB = async () => {
@@ -99,6 +100,7 @@ export default function AddBusiness() {
                 <div>Don't see the correct type? add it <Link className='link' to="/AddBusinessType">Add Type</Link></div>
                 <div>Morning Hours: <input type='text' name='morningHours' onChange={handleOnChange} /></div>
                 <div>Evening Hours: <input type='text' name='eveningHours' onChange={handleOnChange} /></div>
+                <div>Business Banner URL: <input type='text' name='businessBannerURL' onChange={handleOnChange} /></div>
                 <div>Time Between Reservations: <input type='number' name='timeBetweenReservations' onChange={handleOnChange} min={1} max={120} />(mins)</div>
                 <input type='submit' value='Create'/>
             </form>

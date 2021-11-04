@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     width: 20vw;
-    min-width: 400px;
+    min-width: 280px;
 }
 .ownerbusinessContainer {
     display: flex;
@@ -39,4 +39,10 @@
     align-items: center;
     border-radius: 1rem;
     padding: 1rem;
+}
+.businesslink:hover {
+    cursor: pointer;
+}
+.businesslink {
+    color: var(--main-links-color)
 }

@@ -10,6 +10,7 @@ export default function AdminPanel() {
     }
     return (
         <div id='adminPanelContainer' className="floater">
+            <div><Link className="link" to="/MyBusinesses"><div className='adminOption'>My Businesses</div></Link></div>
             <div> Add Operations
                 <div id='addOptions'>
                     <Link className="link" to="/AddBusiness"><div className='adminOption'>Add Business</div></Link>
