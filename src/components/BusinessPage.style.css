@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     width: 20vw;
-    min-width: 280px;
+    min-width: 240px;
 }
 .ownerbusinessContainer {
     display: flex;
